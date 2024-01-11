@@ -1,3 +1,5 @@
+from CadastrarPaciente import cadastrarPaciente
+
 print('________Clínica Ágil!________')
 print('O que deseja fazer?')
 print('1......... Cadastrar paciente')
@@ -16,5 +18,5 @@ while True:
             deletarConsulta()
         if (opt == 4):
             break
-    except ValueError:
+    except ValueError as e:
         print("Insira um número válido!")
