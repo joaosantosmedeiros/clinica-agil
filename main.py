@@ -1,5 +1,6 @@
 from CadastrarPaciente import cadastrarPaciente
 from AgendarConsulta import agendarConsulta
+from CancelarConsulta import cancelarConsulta
 
 print('________Clínica Ágil!________')
 print('O que deseja fazer?')
@@ -16,7 +17,7 @@ while True:
         if (opt == 2):
             agendarConsulta()
         if (opt == 3):
-            deletarConsulta()
+            cancelarConsulta()
         if (opt == 4):
             break
     except ValueError as e:
