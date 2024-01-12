@@ -11,8 +11,9 @@ def agendarConsulta():
         print('Não é possível cadastrar consultas caso não existam pacientes cadastrados.')
         return
 
+    print('\nPara sair, DIGITE 0 em qualquer um dos campos.')
     while True:
-        usuario = input("\nDigite o número do usuário (SAIR - 0): ")
+        usuario = input("\nDigite o número do usuário : ")
         if usuario == "0":
             return
         if validarNumero(numero=usuario) == True:
@@ -23,6 +24,8 @@ def agendarConsulta():
 
     while True:
         hora = input("Digite o horário da consulta no formato XX: ")
+        if hora == "0":
+            return
         if validarHora(hora=hora):
             hora = int(hora)
             break
@@ -30,6 +33,8 @@ def agendarConsulta():
 
     while True:
         data = input("Digite a data da consulta: ")
+        if data == "0":
+            return
         ehValida = validarData(data)
         if (ehValida):
             especialidade = input("Digite a especialidade da consulta: ")
@@ -88,7 +93,7 @@ def cancelarConsulta():
             f'{index + 1} || Data: {consulta["data"].strftime("%d/%m/%Y")} || Hora: {consulta["hora"]} || Espec: {consulta["especialidade"]} || Usuário: {consulta["usuario"]}')
 
     while True:
-        numero = input("Digite o número da consulta (SAIR - 0): ")
+        numero = input("Digite o número da consulta : ")
         if numero == "0":
             return
         if validarNumero(numero) == True:
