@@ -23,8 +23,19 @@ def validarPacientes(pacientes):
 
 
 def cadastrarPaciente():
-    nome = validarNome()
-    telefone = validarTelefone()
+    print('Para sair, DIGITE 0 em qualquer um dos campos')
+    while True:
+        nome = input('Digite o nome do paciente: ')
+        if nome == '0':
+            return
+        if validarNome(nome=nome) == True:
+           break
+    while True:
+        telefone = input('Digite o telefone do paciente: ')
+        if telefone == '0':
+            return
+        if validarTelefone(telefone=telefone):
+            break
 
     if verificarTelefone(telefone=telefone):
         print("\nTelefone já cadastrado! Tente novamente!")
