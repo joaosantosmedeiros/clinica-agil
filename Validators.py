@@ -1,4 +1,5 @@
-from datetime import datetime, date 
+from datetime import datetime
+
 
 def validarNome():
     while True:
@@ -71,14 +72,13 @@ def validarData(data):
         if mes == datetime.now().month:
             if dia < datetime.now().day:
                 return False
-    
+
     return True
 
 
-def validarUsuario(usuario):
-    for caracter in usuario:
-            if caracter.isdigit() == False:
-                print('Erro! Digite um número válido!')
-                return False
+def validarNumero(numero):
+    for caracter in numero:
+        if caracter.isdigit() == False:
+            print('\nErro! Digite um número válido!')
+            return False
     return True
-    

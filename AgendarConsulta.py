@@ -1,7 +1,7 @@
 from datetime import datetime, date
 import pickle
 import os
-from Validators import validarData, validarHora, validarUsuario
+from Validators import validarData, validarHora, validarNumero
 from ListarPacientes import listarPacientes, validarPacientes
 
 
@@ -10,14 +10,14 @@ def agendarConsulta():
     if validarPacientes(pacientes=pacientes) == False:
         print('Não é possível cadastrar consultas caso não existam pacientes cadastrados.')
         return
-    
+
     while True:
         usuario = input("\nDigite o número do usuário: ")
-        if validarUsuario(usuario=usuario) == True:
+        if validarNumero(numero=usuario) == True:
             usuario = int(usuario)
             if usuario <= len(pacientes) and usuario > 0:
                 break
-        print('Erro! Insira um número de usuário válido!')                
+        print('Erro! Insira um número de usuário válido!')
 
     while True:
         hora = input("Digite o horário da consulta no formato XX: ")
