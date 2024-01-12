@@ -12,7 +12,9 @@ def agendarConsulta():
         return
 
     while True:
-        usuario = input("\nDigite o número do usuário: ")
+        usuario = input("\nDigite o número do usuário (SAIR - 0): ")
+        if usuario == "0":
+            return
         if validarNumero(numero=usuario) == True:
             usuario = int(usuario)
             if usuario <= len(pacientes) and usuario > 0:
@@ -41,7 +43,7 @@ def agendarConsulta():
                 consultas = []
 
             if verificarConsulta(hora=hora, data=data):
-                print("Horário já preenchido! Tente novamente.\n")
+                print("Horário já preenchido! Tente novamente.")
                 return
 
             consultas.append(
@@ -86,7 +88,9 @@ def cancelarConsulta():
             f'{index + 1} || Data: {consulta["data"].strftime("%d/%m/%Y")} || Hora: {consulta["hora"]} || Espec: {consulta["especialidade"]} || Usuário: {consulta["usuario"]}')
 
     while True:
-        numero = input("Digite o número da consulta: ")
+        numero = input("Digite o número da consulta (SAIR - 0): ")
+        if numero == "0":
+            return
         if validarNumero(numero) == True:
             numero = int(numero)
             if numero <= len(consultas) and numero > 0:
