@@ -1,6 +1,5 @@
-from CadastrarPaciente import cadastrarPaciente
-from AgendarConsulta import agendarConsulta
-from CancelarConsulta import cancelarConsulta
+from Pacientes import cadastrarPaciente
+from Consultas import agendarConsulta, cancelarConsulta
 
 print('________Clínica Ágil!________')
 print('O que deseja fazer?')
